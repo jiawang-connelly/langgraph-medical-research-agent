@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  medical-research-agent:
+    build: .
+    container_name: medical-research-agent
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./reports:/app/reports
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_BASE_URL=http://localhost:11434
+      - LOCAL_LLM=deepseek-r1:8b
+      - SEARCH_API=duckduckgo
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    
+    # For GPU support (uncomment if using NVIDIA GPU)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  ollama_data:
+    driver: local

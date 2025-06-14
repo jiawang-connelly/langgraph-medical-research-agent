@@ -1,0 +1,39 @@
+# Core dependencies
+langchain>=0.3.25
+langchain-community>=0.3.25
+langchain-core>=0.3.65
+langchain-ollama>=0.3.3
+langchain-openai>=0.3.23
+langgraph>=0.4.8
+langgraph-checkpoint>=2.0.26
+langgraph-prebuilt>=0.2.2
+langgraph-sdk>=0.1.70
+
+# AI/ML dependencies
+ollama>=0.5.1
+openai>=1.68.2
+tiktoken>=0.9.0
+
+# Search and web scraping
+duckduckgo-search>=8.0.4
+tavily-python>=0.7.6
+markdownify>=1.1.0
+beautifulsoup4>=4.13.4
+
+# Data processing
+pydantic>=2.7.4
+pydantic-settings>=2.9.1
+PyYAML>=6.0.2
+requests>=2.32.3
+httpx>=0.28.1
+
+# Utilities
+python-dotenv>=1.1.0
+dataclasses-json>=0.6.7
+tenacity>=9.1.2
+packaging>=24.2
+typing-extensions>=4.14.0
+
+# Optional: GPU acceleration
+# torch>=2.0.0  # Uncomment if using GPU features
+# nvidia-ml-py3>=7.352.0  # Uncomment for NVIDIA GPU monitoring

@@ -1,0 +1,46 @@
+# LangGraph Medical Research Agent Configuration
+
+# Model Configuration
+model:
+  provider: "ollama"
+  name: "deepseek-r1:8b"
+  base_url: "http://localhost:11434"
+  options:
+    temperature: 0.1
+    top_p: 0.9
+    num_ctx: 4096
+    num_predict: 800
+
+# Search Configuration
+search:
+  api: "duckduckgo"
+  max_results: 10
+  research_loops: 2
+  timeout: 30
+
+# Output Configuration
+output:
+  format: "markdown"
+  include_sources: true
+  include_methodology: true
+  include_disclaimer: true
+  strip_thinking_tokens: true
+  save_reports: true
+  reports_dir: "./reports"
+
+# LangGraph Configuration
+langgraph:
+  max_web_research_loops: 2
+  strip_thinking_tokens: true
+  
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "research_agent.log"
+
+# Performance Configuration
+performance:
+  parallel_requests: 3
+  request_delay: 1.0
+  max_retries: 3
